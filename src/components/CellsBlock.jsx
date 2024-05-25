@@ -141,13 +141,15 @@ const CellsBlock = ({refresh}) => {
                     stopMove=true;
                     setWinCase(item);
                     setGameFinished(true);
-                    break;
+                    return;
+
                 }
             }
             if(!cells.includes("") && winCase.length===0){
                 // console.log("Its a draw!");
                 setIsDraw(true);
-                return setGameFinished(true);
+                setGameFinished(true);
+                return;
             }
             if (!xTurn && vsComputer && !stopMove) {
                 setTimeout(() => {
